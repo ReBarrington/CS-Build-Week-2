@@ -1,10 +1,21 @@
 # https://leetcode.com/problems/add-two-numbers/
 
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+# A Linked List class with a single head node
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+        
+    def insert(self, data):
+        new_node = ListNode(data)
+        new_node.next = (self.head)
+        self.head = new_node
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
@@ -41,21 +52,14 @@ class Solution(object):
             else:
                 break
         
-        # reverse array
-        result_arr.reverse()
         
         # make linkedList
-        for i in range(len(result_arr) - 1):
+        result = LinkedList()
         
-            result = ListNode()
-            result.val = result_arr[i]
-            result.next = 
-    
-            print(result, ' is result after linkedList')
-            
-            result = result.next
+        for num in result_arr:
+            result.insert(num)
         
-        print(result, ' is a linked list?')
+        return result
             
             
         

@@ -41,13 +41,19 @@ class Solution(object):
         
         print(result_arr, ' is result_arr')
         
-        while True:
-            result = []
-            
-            for i in range(len(result_arr) - 2):
-                result.append(ListNode(result_arr[i], result_arr[i+1]))
-                continue
-            
-            result.append(ListNode(result_arr[-1]))
-            return result
         
+        result = ListNode()
+        current = result
+            
+        while len(result_arr) > 0:
+            current.val = result_arr[0]
+            result_arr.pop(0)
+
+            if len(result_arr) == 0:
+                continue
+
+            else:
+                current.next = ListNode()
+                current = current.next
+
+        return result
